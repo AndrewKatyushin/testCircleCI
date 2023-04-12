@@ -43,5 +43,5 @@ jobs:
 workflows:
   builds:
     jobs:
-      # - build-ios
+      - build-ios
       - build-android
