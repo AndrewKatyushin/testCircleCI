@@ -23,6 +23,17 @@ jobs:
       - run:
           name: "Build release ios"
           command: "flutter build ios --release"
+  build-android:
+    executor:
+      name: android/android-machine
+    steps:
+      - flutter/install_sdk_and_pub:
+          version: 3.0.3
+      - flutter/install_android_gradle_dependencies
+      - flutter/install_android_gem
+      - run:
+          name: "Build release android"
+          command: "flutter build apk --release"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -30,3 +41,4 @@ workflows:
   builds:
     jobs:
       - build-ios
+      - build-android
