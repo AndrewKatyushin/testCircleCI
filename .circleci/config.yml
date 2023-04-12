@@ -29,8 +29,9 @@ jobs:
       resource-class: large
       tag: 2021.10.1
     steps:
+      - checkout
       - flutter/install_sdk_and_pub:
-          version: 3.0.3
+          version: 3.7.6
       - flutter/install_android_gradle_dependencies
       - flutter/install_android_gem
       - run:
@@ -42,5 +43,5 @@ jobs:
 workflows:
   builds:
     jobs:
-      - build-ios
+      # - build-ios
       - build-android
