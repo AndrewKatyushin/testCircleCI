@@ -20,8 +20,6 @@ jobs:
       - checkout
       - flutter/install_sdk_and_pub:
           version: 3.7.6
-      - flutter/install_ios_pod
-      - flutter/install_ios_gem
       - run:
           name: "Build release ios"
           command: "flutter build ios --release"
